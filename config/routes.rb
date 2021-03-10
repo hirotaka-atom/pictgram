@@ -10,5 +10,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :topics
+
+  get 'favorites/index'
+  post '/favorites', to: 'favorites#create'
+  delete '/unfavorites', to: 'favorites#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
